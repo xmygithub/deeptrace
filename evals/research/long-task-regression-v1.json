@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "suite_id": "long-task-regression-v1",
+  "description": "固定开发回归题；用于检查多要求研究交付，不是独立泛化基准。",
+  "cases": [{
+    "case_id": "retrieval-tradeoffs",
+    "question": "一个企业内部知识库已经使用向量检索，但用户经常反馈搜到了相关文档，答案仍然不完整。请比较查询改写、多查询检索和重排序三种改进方法：分别解决什么问题、适用什么场景、有什么局限？在无法重新训练模型、需要控制调用成本的条件下，给出实施优先级和验证方案。请引用公开资料，区分资料中的结论与你的建议。",
+    "scope": "研究流程开发回归；不要求固定优先级，不允许编造收益。",
+    "criteria": [
+      {"criterion_id": "comparison", "description": "分别解释三种方法的适用问题与局限。"},
+      {"criterion_id": "constraints", "description": "建议符合不能重新训练、控制调用成本的约束。"},
+      {"criterion_id": "verification", "description": "给出验证改进的方法，并区分建议与资料结论。"}
+    ],
+    "references": []
+  }]
+}

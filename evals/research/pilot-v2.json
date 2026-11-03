@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "suite_id": "deeptrace-research-pilot-v2",
+  "description": "2026-10-23 运行前冻结的三题开发评测；每个问题分别运行两种工作流一次，不是独立测试集或公开基准。",
+  "cases": [
+    {
+      "case_id": "rag-multihop-v2",
+      "question": "对于RAG多跳问题召回率低应该怎么办",
+      "accepted_questions": [],
+      "scope": "技术排查建议；未给出数据集与系统配置，不要求固定唯一答案，不允许虚构本项目收益。",
+      "difficulty": "research",
+      "criteria": [
+        {"criterion_id": "corpus", "description": "建议先确认知识库是否包含回答所需的材料。"},
+        {"criterion_id": "decomposition", "description": "解释查询分解或改写如何帮助找到各跳证据。"},
+        {"criterion_id": "iteration", "description": "说明使用中间实体或已找到的证据继续检索。"},
+        {"criterion_id": "retrieval", "description": "至少解释一项检索链路改进措施的适用原因，而非只列术语。"},
+        {"criterion_id": "measurement", "description": "提出用固定问题及相关证据标注检验改进。"},
+        {"criterion_id": "tradeoff", "description": "说明至少一项改进措施的成本或局限。"}
+      ],
+      "references": []
+    },
+    {
+      "case_id": "agent-definition-v2",
+      "question": "什么是 AI Agent？请用一个工具调用例子解释。",
+      "accepted_questions": [],
+      "scope": "明确的 AI 软件语境，不要求其他学科词义；不要求固定架构。",
+      "difficulty": "simple",
+      "criteria": [
+        {"criterion_id": "goal", "description": "解释 Agent 围绕目标决定下一步行动。"},
+        {"criterion_id": "tool", "description": "给出与任务连贯的工具调用例子。"},
+        {"criterion_id": "responsibility", "description": "区分模型提出工具调用与程序实际执行工具。"},
+        {"criterion_id": "feedback", "description": "解释工具返回结果如何影响后续行动或回答。"},
+        {"criterion_id": "scope", "description": "回答主体聚焦 AI Agent，无关领域不占主要篇幅。"}
+      ],
+      "references": []
+    },
+    {
+      "case_id": "graphrag-comparison-v2",
+      "question": "比较普通向量检索与 GraphRAG 的适用场景、实现代价和局限，并说明如何验证选型。",
+      "accepted_questions": [],
+      "scope": "概念比较与选型；不把 GraphRAG 研究方法等同于当前项目实现。",
+      "difficulty": "comparison",
+      "criteria": [
+        {"criterion_id": "vector", "description": "解释向量检索如何通过文本块的语义相似性寻找材料。"},
+        {"criterion_id": "graph", "description": "解释图中的实体关系或社区摘要在检索中的作用。"},
+        {"criterion_id": "scenario", "description": "分别给出向量检索与图增强方法适合的查询场景。"},
+        {"criterion_id": "cost", "description": "说明建图、更新或查询中的至少一项额外成本。"},
+        {"criterion_id": "limits", "description": "说明图增强方法的适用限制，不声称其普遍优于向量检索。"},
+        {"criterion_id": "experiment", "description": "提出同语料、同问题下比较质量与成本的选型实验。"}
+      ],
+      "references": []
+    }
+  ]
+}

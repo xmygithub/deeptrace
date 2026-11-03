@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "suite_id": "deeptrace-research-pilot-v1",
+  "description": "三题自建试验集，不是公开基准成绩；评分要点需逐项人工核查。参考资料用于评分，不能自动注入被测 Agent。",
+  "cases": [
+    {
+      "case_id": "rag-multihop-001",
+      "question": "对于RAG多跳问题召回率低应该怎么办",
+      "accepted_questions": ["RAG 多跳问题召回率低，应如何排查和改进？请说明排查顺序与验证方法。"],
+      "scope": "技术排查与改进建议；未指定现有索引和数据时应说明假设，不虚构提升数字。",
+      "difficulty": "research",
+      "criteria": [
+        {"criterion_id": "diagnosis", "description": "区分知识库缺少材料、查询/分解问题与检索链路问题，说明先确认所需证据是否存在。"},
+        {"criterion_id": "retrieval", "description": "提出查询改写/分解、检索粒度或混合检索等具体措施，并解释适用原因与代价。"},
+        {"criterion_id": "multihop", "description": "解释后续检索如何利用中间实体或证据补齐多跳链路，不能只增大 Top-K。"},
+        {"criterion_id": "validation", "description": "提出固定样本、相关证据标注及逐跳/最终答案检查，区分检索改进与生成质量。"},
+        {"criterion_id": "limits", "description": "给出有顺序的排查建议，说明数据和成本限制，不无依据声称某方法必然提升。"}
+      ],
+      "references": [
+        {"title": "LangChain Retrieval", "url": "https://docs.langchain.com/oss/python/deepagents/retrieval", "checked_on": "2026-10-23", "use": "检索流程中的文档切分、向量表示、查询增强、检索验证和再次检索；不单独作为多跳方案的完整标准答案。"},
+        {"title": "IRCoT: Interleaving Retrieval with Chain-of-Thought Reasoning", "url": "https://arxiv.org/abs/2212.10509", "checked_on": "2026-10-23", "use": "已核对论文摘要：后续检索依赖先前推导与检索结果，交替进行检索和推理。没有复现论文指标，不把其收益当作本项目收益。"}
+      ]
+    },
+    {
+      "case_id": "agent-definition-001",
+      "question": "agent是什么",
+      "accepted_questions": ["什么是 AI Agent？请用一个工具调用例子解释。"],
+      "scope": "这是部署在 AI 研究项目中的问题，优先解释 AI Agent；简短消歧可以接受，不要求化学、商业等领域综述。",
+      "difficulty": "simple",
+      "criteria": [
+        {"criterion_id": "definition", "description": "说明 AI Agent 围绕目标使用模型进行决策、借助工具行动，并利用结果继续处理任务。"},
+        {"criterion_id": "example", "description": "给出连贯的工具调用例子，区分模型提出调用与程序执行调用。"},
+        {"criterion_id": "scope", "description": "以 AI/软件语境回答，避免让无关领域解释占据主体。"},
+        {"criterion_id": "tradeoff", "description": "不声称所有 Agent 都必须多 Agent 协作、无限循环或比固定流程更优。"}
+      ],
+      "references": [
+        {"title": "Building effective agents", "url": "https://www.anthropic.com/research/building-effective-agents", "checked_on": "2026-10-23", "use": "工作流与 Agent 的区别、模型动态控制过程与工具、观察反馈，以及复杂度与成本取舍。"}
+      ]
+    },
+    {
+      "case_id": "graphrag-comparison-001",
+      "question": "比较普通向量检索与 GraphRAG 的适用场景、实现代价和局限，并说明如何验证选型。",
+      "accepted_questions": [],
+      "scope": "比较原理与取舍，不要求当前项目已经实现 Microsoft GraphRAG 的全部查询模式。",
+      "difficulty": "comparison",
+      "criteria": [
+        {"criterion_id": "vector", "description": "解释向量检索从文本块语义相似性获取相关内容，并指出其适合的查询。"},
+        {"criterion_id": "graph", "description": "解释实体关系与社区摘要等图增强信息的作用，并区分局部实体问题与全局主题问题。"},
+        {"criterion_id": "cost", "description": "说明建图/索引、更新、查询成本和抽取错误等限制，避免声称 GraphRAG 普遍更优。"},
+        {"criterion_id": "experiment", "description": "提出同一语料和固定问题下的对照评测，分别核查证据、答案质量和成本。"}
+      ],
+      "references": [
+        {"title": "GraphRAG Query Engine", "url": "https://microsoft.github.io/graphrag/query/overview/", "checked_on": "2026-10-23", "use": "Local 使用图与原文块，Global 使用社区报告并有资源开销，Basic 使用向量 RAG；不是当前项目所有实现的证明。"},
+        {"title": "LangChain Retrieval", "url": "https://docs.langchain.com/oss/python/deepagents/retrieval", "checked_on": "2026-10-23", "use": "文档切分、Embedding、向量库与检索流程。"}
+      ]
+    }
+  ]
+}

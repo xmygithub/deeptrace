@@ -1,0 +1,1358 @@
+{
+  "schema_version": 1,
+  "suite_id": "deeptrace-workflow-50-v1",
+  "created_at": "2026-10-30",
+  "description": "50道自建执行评测题：15开发/35保留。尚未执行或人工标注，不是公开基准。所有问题联网研究。",
+  "cases": [
+    {
+      "case_id": "mechanism-01",
+      "category": "mechanism",
+      "category_label": "机制解释",
+      "split": "dev",
+      "smoke": true,
+      "question": "数据库索引为什么能加快查询，又会增加写入成本？请解释原理并引用来源。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "basic",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "查询定位机制"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "写入维护代价"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "适用边界"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "mechanism-02",
+      "category": "mechanism",
+      "category_label": "机制解释",
+      "split": "dev",
+      "smoke": false,
+      "question": "HTTP 请求超时后直接重试有什么风险？请用一个具体例子解释。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "basic",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "超时结果不确定"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "重复执行风险"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "安全重试条件"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "mechanism-03",
+      "category": "mechanism",
+      "category_label": "机制解释",
+      "split": "dev",
+      "smoke": false,
+      "question": "消息队列的消费确认与业务幂等分别解决什么问题？请举例并引用来源。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "basic",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "确认职责"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "幂等职责"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "失败场景"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "mechanism-04",
+      "category": "mechanism",
+      "category_label": "机制解释",
+      "split": "test",
+      "smoke": false,
+      "question": "为什么异步 Python 服务里不能直接执行长时间阻塞的同步网络请求？",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "事件循环影响"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "隔离阻塞的方法"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "取消的局限"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "mechanism-05",
+      "category": "mechanism",
+      "category_label": "机制解释",
+      "split": "test",
+      "smoke": false,
+      "question": "数据库事务能保证哪些一致性，为什么不能直接保证外部 HTTP 调用成功？",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "事务作用域"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "外部调用边界"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "异常窗口"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "mechanism-06",
+      "category": "mechanism",
+      "category_label": "机制解释",
+      "split": "test",
+      "smoke": false,
+      "question": "缓存穿透、击穿和雪崩有什么区别？分别适合如何处理？",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "三种问题区别"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "对应处理措施"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "措施代价"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "mechanism-07",
+      "category": "mechanism",
+      "category_label": "机制解释",
+      "split": "test",
+      "smoke": false,
+      "question": "为什么向量检索能找到主题相关的文档，却未必能回答一个多跳问题？",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "相似性与答案区别"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "多跳信息需求"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "可验证例子"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "mechanism-08",
+      "category": "mechanism",
+      "category_label": "机制解释",
+      "split": "test",
+      "smoke": false,
+      "question": "租约过期为什么不能证明旧执行者已经停止？请说明对任务恢复的影响。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "过期与停止区别"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "双执行窗口"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "防护边界"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "mechanism-09",
+      "category": "mechanism",
+      "category_label": "机制解释",
+      "split": "test",
+      "smoke": false,
+      "question": "流式生成与普通非流式生成对用户感知延迟有什么影响？请区分首字延迟和总耗时。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "首字延迟"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "总耗时"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "异常处理"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "mechanism-10",
+      "category": "mechanism",
+      "category_label": "机制解释",
+      "split": "test",
+      "smoke": false,
+      "question": "模型上下文窗口很大时，为什么仍需要筛选工具返回内容？",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "上下文噪声"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "成本影响"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "信息保留取舍"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "comparison-01",
+      "category": "comparison",
+      "category_label": "方案比较",
+      "split": "dev",
+      "smoke": true,
+      "question": "比较 Redis Streams 与 RabbitMQ 的消息确认、失败恢复和维护成本，并说明适用条件。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "basic",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "确认机制比较"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "失败恢复比较"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "条件化选型"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "comparison-02",
+      "category": "comparison",
+      "category_label": "方案比较",
+      "split": "dev",
+      "smoke": true,
+      "question": "比较滑动窗口和增量摘要在长会话中的信息保留、调用成本与局限。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "basic",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "信息保留比较"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "成本比较"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "适用条件"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "comparison-03",
+      "category": "comparison",
+      "category_label": "方案比较",
+      "split": "dev",
+      "smoke": false,
+      "question": "比较数据库轮询和消息队列驱动的后台任务调度，说明延迟、可靠性与实现成本。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "basic",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "延迟比较"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "可靠性机制"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "实现维护成本"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "comparison-04",
+      "category": "comparison",
+      "category_label": "方案比较",
+      "split": "test",
+      "smoke": false,
+      "question": "比较重试和检查点恢复对长任务的作用，说明二者如何组合。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "作用范围差异"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "重复执行风险"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "组合方式"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "comparison-05",
+      "category": "comparison",
+      "category_label": "方案比较",
+      "split": "test",
+      "smoke": false,
+      "question": "比较普通向量 RAG 和 GraphRAG 的适用查询、建设成本与更新代价。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "适用查询"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "建设成本"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "更新局限"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "comparison-06",
+      "category": "comparison",
+      "category_label": "方案比较",
+      "split": "test",
+      "smoke": false,
+      "question": "比较顺序执行与并行执行研究子任务，说明依赖、共享状态和资源限制的影响。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "依赖限制"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "共享状态风险"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "成本与延迟"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "comparison-07",
+      "category": "comparison",
+      "category_label": "方案比较",
+      "split": "test",
+      "smoke": false,
+      "question": "比较 SQLite 和 PostgreSQL 作为后台任务状态库的使用条件，重点说明并发写入与部署成本。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "并发写入"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "部署成本"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "适用边界"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "comparison-08",
+      "category": "comparison",
+      "category_label": "方案比较",
+      "split": "test",
+      "smoke": false,
+      "question": "比较提示词中约束工具权限与程序执行前校验工具白名单，说明各自作用。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "提示词作用"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "执行校验作用"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "互补边界"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "comparison-09",
+      "category": "comparison",
+      "category_label": "方案比较",
+      "split": "test",
+      "smoke": false,
+      "question": "比较仅用模型打分与规则加人工抽查的 Agent 评测，说明成本及可信度。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "评判覆盖"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "成本"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "可信度限制"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "comparison-10",
+      "category": "comparison",
+      "category_label": "方案比较",
+      "split": "test",
+      "smoke": false,
+      "question": "比较 SSE 和 WebSocket 展示研究进度的适用性，考虑单向推送、重连与部署。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "通信方向"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "重连"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "部署与选型"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "constraints-01",
+      "category": "constraints",
+      "category_label": "约束研究",
+      "split": "dev",
+      "smoke": true,
+      "question": "企业已有向量知识库，不能训练模型且没有 GPU。多跳问题经常漏答，预算有限时应按什么顺序排查和改进？",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "basic",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "遵守资源约束"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "排查顺序"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "验证方法"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "constraints-02",
+      "category": "constraints",
+      "category_label": "约束研究",
+      "split": "dev",
+      "smoke": false,
+      "question": "一个单机 FastAPI 研究服务需要支持进程重启后继续任务，暂不引入 Redis 和消息队列，可以怎样设计？",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "basic",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "单机约束"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "保存与恢复"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "重复执行边界"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "constraints-03",
+      "category": "constraints",
+      "category_label": "约束研究",
+      "split": "dev",
+      "smoke": false,
+      "question": "外部搜索接口有严格频率限制。研究任务如何安排重试、并发与停止条件，避免把限流放大？",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "basic",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "限流处理"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "并发约束"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "有界停止"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "constraints-04",
+      "category": "constraints",
+      "category_label": "约束研究",
+      "split": "test",
+      "smoke": false,
+      "question": "用户要求只使用私有资料生成研究报告，召回不足时应如何处理，且不能自动联网？",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "来源边界"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "缺口处理"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "局限披露"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "constraints-05",
+      "category": "constraints",
+      "category_label": "约束研究",
+      "split": "test",
+      "smoke": false,
+      "question": "研究任务最长允许五分钟，如何在检索、报告与验证之间分配预算，避免检索用完全部时间？",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "阶段预留"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "剩余预算约束"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "超限处理"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "constraints-06",
+      "category": "constraints",
+      "category_label": "约束研究",
+      "split": "test",
+      "smoke": false,
+      "question": "团队只有两名开发者，需要可恢复的异步任务，如何在数据库任务表与引入完整工作流平台之间选择？",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "团队维护约束"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "方案取舍"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "演进条件"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "constraints-07",
+      "category": "constraints",
+      "category_label": "约束研究",
+      "split": "test",
+      "smoke": false,
+      "question": "不保存用户原始对话全文的前提下，如何支持会话摘要？请分析隐私与可追溯性之间的限制。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "存储约束"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "摘要策略"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "追溯限制"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "constraints-08",
+      "category": "constraints",
+      "category_label": "约束研究",
+      "split": "test",
+      "smoke": false,
+      "question": "移动端网络不稳定，用户可能重复点击发送。怎样避免重复创建付费研究任务？",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "请求标识"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "数据库去重"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "主动重复提问区别"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "constraints-09",
+      "category": "constraints",
+      "category_label": "约束研究",
+      "split": "test",
+      "smoke": false,
+      "question": "同一任务只能使用固定版本的提示词与 Skill，运行中管理员更新策略，怎样保证研究过程可追溯？",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "版本冻结"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "加载策略"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "追溯信息"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "constraints-10",
+      "category": "constraints",
+      "category_label": "约束研究",
+      "split": "test",
+      "smoke": false,
+      "question": "报告必须引用来源，但搜索额度已经耗尽，剩余证据不足时应该怎样交付或结束？",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "不编造来源"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "剩余结果处理"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "结束条件"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "synthesis-01",
+      "category": "synthesis",
+      "category_label": "综合研究",
+      "split": "dev",
+      "smoke": true,
+      "question": "设计一个研究任务从接收请求到生成报告的故障处理流程，解释重试、幂等和检查点分别放在哪里。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "basic",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "端到端流程"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "三类机制职责"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "故障边界"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "synthesis-02",
+      "category": "synthesis",
+      "category_label": "综合研究",
+      "split": "dev",
+      "smoke": false,
+      "question": "如何判断多轮检索是在补齐有效信息，还是重复搜索？请结合发现、缺口和停止条件说明。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "basic",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "有效增量定义"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "重复识别"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "停止规则"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "synthesis-03",
+      "category": "synthesis",
+      "category_label": "综合研究",
+      "split": "dev",
+      "smoke": false,
+      "question": "研究报告遗漏比较对象时，如何区分规划遗漏、检索不足、报告遗漏和验证漏检？",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "basic",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "分层定位"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "所需轨迹证据"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "修复方向"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "synthesis-04",
+      "category": "synthesis",
+      "category_label": "综合研究",
+      "split": "test",
+      "smoke": false,
+      "question": "如何设计一个需要继承前置证据的研究任务计划？给出例子并解释依赖失败的处理。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "依赖例子"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "证据继承"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "依赖失败"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "synthesis-05",
+      "category": "synthesis",
+      "category_label": "综合研究",
+      "split": "test",
+      "smoke": false,
+      "question": "如何把网页搜索结果转换成可追溯的报告引用？说明去重、证据编号、正文引用及检查的关系。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "证据生成"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "引用关联"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "检查边界"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "synthesis-06",
+      "category": "synthesis",
+      "category_label": "综合研究",
+      "split": "test",
+      "smoke": false,
+      "question": "长任务恢复时如何处理数据库状态、内存状态和外部工具结果之间的不一致？",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "三类状态"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "恢复顺序"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "不确定窗口"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "synthesis-07",
+      "category": "synthesis",
+      "category_label": "综合研究",
+      "split": "test",
+      "smoke": false,
+      "question": "一个研究任务突然从两分钟变成十分钟，如何利用阶段轨迹、调用次数和 Token 排查原因？",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "阶段分析"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "次数与单次耗时"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "定位例子"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "synthesis-08",
+      "category": "synthesis",
+      "category_label": "综合研究",
+      "split": "test",
+      "smoke": false,
+      "question": "如何设计 Agent 的取消和暂停？说明请求已发出、结果未保存和报告已生成时的处理边界。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "取消暂停区别"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "在途调用"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "保存边界"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "synthesis-09",
+      "category": "synthesis",
+      "category_label": "综合研究",
+      "split": "test",
+      "smoke": false,
+      "question": "如何评估摘要压缩有没有丢掉用户约束？请给出测试场景、观察指标和失败判定。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "约束场景"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "观察指标"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "失败标准"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "synthesis-10",
+      "category": "synthesis",
+      "category_label": "综合研究",
+      "split": "test",
+      "smoke": false,
+      "question": "如何把研究运行中的失败经验转成可复用 Skill，同时避免把单题答案和错误经验推广到所有任务？",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "经验筛选"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "适用范围"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "启用验证"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "uncertainty-01",
+      "category": "uncertainty",
+      "category_label": "时效与证据边界",
+      "split": "dev",
+      "smoke": true,
+      "question": "截至2026年10月30日，Python 3.13 的自由线程构建是否意味着所有 Python 程序都能自动获得多核加速？区分已支持能力与限制。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "basic",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "时间与版本范围"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "支持能力"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "限制与条件"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "uncertainty-02",
+      "category": "uncertainty",
+      "category_label": "时效与证据边界",
+      "split": "dev",
+      "smoke": false,
+      "question": "截至2026年10月30日，查询 SQLite WAL 模式的官方说明：它是否允许多个写入者同时提交？请区分读写并发与多写并发。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "basic",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "官方依据"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "并发类型区别"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "结论边界"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "uncertainty-03",
+      "category": "uncertainty",
+      "category_label": "时效与证据边界",
+      "split": "dev",
+      "smoke": false,
+      "question": "有人称使用 RAG 就能完全消除大模型幻觉。请寻找依据评价该说法，区分能缓解的问题与仍存在的风险。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "basic",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "核查绝对说法"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "有效作用"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "残余风险"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "uncertainty-04",
+      "category": "uncertainty",
+      "category_label": "时效与证据边界",
+      "split": "test",
+      "smoke": false,
+      "question": "研究2024年和2025年中国新能源汽车年度销量变化，区分统计口径并说明来源；缺少同口径数据时明确指出。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "两个年度"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "口径一致性"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "不确定披露"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "uncertainty-05",
+      "category": "uncertainty",
+      "category_label": "时效与证据边界",
+      "split": "test",
+      "smoke": false,
+      "question": "截至2026年10月30日，研究2026年中国新能源汽车销量趋势，只使用已公开的实际统计，不能把全年预测当成全年实绩。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "截止时间"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "实绩预测区分"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "趋势局限"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "uncertainty-06",
+      "category": "uncertainty",
+      "category_label": "时效与证据边界",
+      "split": "test",
+      "smoke": false,
+      "question": "两篇文章对同一检索方案的效果结论相反，应该如何核对数据集、指标与实验条件，而不是直接选择数字更高的一篇？",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "条件核对"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "冲突解释"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "不能确定的情况"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "uncertainty-07",
+      "category": "uncertainty",
+      "category_label": "时效与证据边界",
+      "split": "test",
+      "smoke": false,
+      "question": "搜索某开源工具是否支持检查点恢复时，如何区分 README 宣传、正式文档和未合并的功能讨论？请举一个可核查例子。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "来源层级"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "发布状态"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "实例与限制"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "uncertainty-08",
+      "category": "uncertainty",
+      "category_label": "时效与证据边界",
+      "split": "test",
+      "smoke": false,
+      "question": "请核查‘消息队列宣称 exactly-once 就意味着外部支付绝不会重复扣款’这一说法，说明语义适用范围。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "语义作用域"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "外部副作用"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "条件与限制"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "uncertainty-09",
+      "category": "uncertainty",
+      "category_label": "时效与证据边界",
+      "split": "test",
+      "smoke": false,
+      "question": "有人称图检索一定比向量检索准确。请根据可查材料分析该结论，说明任务与评测条件为什么重要。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "绝对判断核查"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "任务差异"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "评测条件"
+        }
+      ],
+      "references": []
+    },
+    {
+      "case_id": "uncertainty-10",
+      "category": "uncertainty",
+      "category_label": "时效与证据边界",
+      "split": "test",
+      "smoke": false,
+      "question": "截至2026年10月30日，研究一项公开发布的 Agent 框架版本变化，区分正式发布、预览和计划能力，并列出无法确认的内容。",
+      "scope": "执行与交付约束评测；criteria供复核，不自动当成独立质量分数；不要求唯一标准答案。",
+      "difficulty": "mixed",
+      "source_mode": "web",
+      "accepted_questions": [],
+      "criteria": [
+        {
+          "criterion_id": "c1",
+          "description": "明确对象版本"
+        },
+        {
+          "criterion_id": "c2",
+          "description": "发布状态区别"
+        },
+        {
+          "criterion_id": "c3",
+          "description": "未确认项"
+        }
+      ],
+      "references": []
+    }
+  ]
+}
